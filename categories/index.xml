@@ -9,5 +9,14 @@
 	<atom:link href="https://tieweill.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Notes</title>
+      <link>https://tieweill.github.io/categories/notes/</link>
+      <pubDate>Wed, 12 Dec 2018 17:51:18 +0800</pubDate>
+      
+      <guid>https://tieweill.github.io/categories/notes/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

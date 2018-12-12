@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cmd on Tiewei Li</title>
+    <link>https://tieweill.github.io/tags/cmd/</link>
+    <description>Recent content in Cmd on Tiewei Li</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 12 Dec 2018 17:51:18 +0800</lastBuildDate>
+    
+	<atom:link href="https://tieweill.github.io/tags/cmd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>合并某文件夹下所有csv文件的方法</title>
+      <link>https://tieweill.github.io/docs/code-notes/</link>
+      <pubDate>Wed, 12 Dec 2018 17:51:18 +0800</pubDate>
+      
+      <guid>https://tieweill.github.io/docs/code-notes/</guid>
+      <description>例如：假如每一个用户信息都是一个单独的csv文件，现在想将所有的用户信息合并成一个csv文件。 尝试了很多种python的写法，效果都不是很理想，最后用cmd中的一行命令完美解决，效果相当于python中的concat(axis=1)（即纵向拼接）。
+步骤如下:
+ 1.保证所有的csv文件在一个文件夹下。
+ 2.打开cmd，cd到存放csv的文件夹。（也可以在csv文件夹中，按住shift加鼠标右键，选择在此处打开命令窗口。）
+ 3.输入以下命令；
+  copy *.csv merge.csv  （merge为合成后生成文件的名字，可以任意。）
+ 4.然后按enter，终端对话框为显示进度。结束后，打开csv文件夹就可以看到merge.csv  参考：Merge CSV Files Into One Large CSV File In Windows 7</description>
+    </item>
+    
+  </channel>
+</rss>
