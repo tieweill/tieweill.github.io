@@ -5,10 +5,19 @@
     <link>https://tieweill.github.io/tags/</link>
     <description>Recent content in Tags on Tiewei Li</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 12 Dec 2018 17:51:18 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 26 Dec 2018 15:05:54 +0800</lastBuildDate>
     
 	<atom:link href="https://tieweill.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>BookReview</title>
+      <link>https://tieweill.github.io/tags/bookreview/</link>
+      <pubDate>Wed, 26 Dec 2018 15:05:54 +0800</pubDate>
+      
+      <guid>https://tieweill.github.io/tags/bookreview/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Cmd</title>
@@ -20,11 +29,11 @@
     </item>
     
     <item>
-      <title>Code notes</title>
-      <link>https://tieweill.github.io/tags/code-notes/</link>
+      <title>Python</title>
+      <link>https://tieweill.github.io/tags/python/</link>
       <pubDate>Wed, 12 Dec 2018 17:51:18 +0800</pubDate>
       
-      <guid>https://tieweill.github.io/tags/code-notes/</guid>
+      <guid>https://tieweill.github.io/tags/python/</guid>
       <description></description>
     </item>
     
