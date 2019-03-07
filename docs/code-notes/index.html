@@ -4,30 +4,22 @@
 <head>
   <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
-<meta name='description' content='例如：假如每一个用户信息都是一个单独的csv文件，现在想将所有的用户信息合并成一个csv文件。 尝试了很多种python的写法，效果都不是很理想，最后用cmd中的一行命令完美解决，效果相当于python中的concat(axis=1)（即纵向拼接）。
-步骤如下:
- 1.保证所有的csv文件在一个文件夹下。
- 2.打开cmd，cd到存放csv的文件夹。（也可以在csv文件夹中，按住shift加鼠标右键，选择在此处打开命令窗口。）
- 3.输入以下命令；
-  copy *.csv merge.csv  （merge为合成后生成文件的名字，可以任意。）
- 4.然后按enter，终端对话框为显示进度。结束后，打开csv文件夹就可以看到merge.csv  参考：Merge CSV Files Into One Large CSV File In Windows 7'>
+<meta name='description' content='For example, if each user information is a separate csv file, now I want to merge all the user information into one csv file. I tried a lot of Python writing methods, the effect is not very ideal, and finally solved with a line of commands in cmd, the effect is equivalent to concat (axis=1) in python (ie vertical stitching).
+Steps:
+ 1.Make sure all csv files are in one folder.'>
 <meta name='theme-color' content='#ffcd00'>
 
-<meta property='og:title' content='合并某文件夹下所有csv文件的方法 • Tiewei Li'>
-<meta property='og:description' content='例如：假如每一个用户信息都是一个单独的csv文件，现在想将所有的用户信息合并成一个csv文件。 尝试了很多种python的写法，效果都不是很理想，最后用cmd中的一行命令完美解决，效果相当于python中的concat(axis=1)（即纵向拼接）。
-步骤如下:
- 1.保证所有的csv文件在一个文件夹下。
- 2.打开cmd，cd到存放csv的文件夹。（也可以在csv文件夹中，按住shift加鼠标右键，选择在此处打开命令窗口。）
- 3.输入以下命令；
-  copy *.csv merge.csv  （merge为合成后生成文件的名字，可以任意。）
- 4.然后按enter，终端对话框为显示进度。结束后，打开csv文件夹就可以看到merge.csv  参考：Merge CSV Files Into One Large CSV File In Windows 7'>
+<meta property='og:title' content='How to merge all csv files in a folder? • Tiewei Li'>
+<meta property='og:description' content='For example, if each user information is a separate csv file, now I want to merge all the user information into one csv file. I tried a lot of Python writing methods, the effect is not very ideal, and finally solved with a line of commands in cmd, the effect is equivalent to concat (axis=1) in python (ie vertical stitching).
+Steps:
+ 1.Make sure all csv files are in one folder.'>
 <meta property='og:url' content='https://tieweill.github.io/docs/code-notes/'>
 <meta property='og:site_name' content='Tiewei Li'>
-<meta property='og:type' content='article'><meta property='article:section' content='Docs'><meta property='article:tag' content='Python'><meta property='article:tag' content='cmd'><meta property='article:published_time' content='2018-12-12T17:51:18&#43;08:00'/><meta property='article:modified_time' content='2018-12-12T17:51:18&#43;08:00'/><meta name='twitter:card' content='summary'>
+<meta property='og:type' content='article'><meta property='article:section' content='Docs'><meta property='article:tag' content='Python'><meta property='article:published_time' content='2018-12-12T17:51:18&#43;08:00'/><meta property='article:modified_time' content='2018-12-12T17:51:18&#43;08:00'/><meta name='twitter:card' content='summary'>
 
 <meta name="generator" content="Hugo 0.45" />
 
-  <title>合并某文件夹下所有csv文件的方法 • Tiewei Li</title>
+  <title>How to merge all csv files in a folder? • Tiewei Li</title>
   <link rel='canonical' href='https://tieweill.github.io/docs/code-notes/'>
   
   
@@ -94,9 +86,7 @@
   <ul class='list taxonomy-cloud'><li>
         <a href='/tags/bookreview' style='font-size:1em'>BookReview</a>
       </li><li>
-        <a href='/tags/python' style='font-size:1em'>Python</a>
-      </li><li>
-        <a href='/tags/cmd' style='font-size:1em'>Cmd</a>
+        <a href='/tags/python' style='font-size:2em'>Python</a>
       </li></ul>
 </div>
 
@@ -132,13 +122,13 @@
 </span>
 </button>
     <ul><li class='item'>
-        <a href='/adout/'>About</a>
+        <a href='/'>Home</a>
       </li><li class='item'>
         <a href='/docs/'>DOCS</a>
       </li><li class='item'>
-        <a href='/'>Home</a>
-      </li><li class='item'>
         <a href='/projects/'>PROJECTS</a>
+      </li><li class='item'>
+        <a href='/adout/'>About</a>
       </li><li class='item'>
         <a href='https://github.com/tieweill/tieweill.github.io'>Repo</a>
       </li></ul>
@@ -159,7 +149,7 @@
   <header class='header entry-header'>
   <div class='container sep-after'>
     <div class='header-info'>
-      <h1 class='title'>合并某文件夹下所有csv文件的方法</h1>
+      <h1 class='title'>How to merge all csv files in a folder?</h1>
       
 
     </div>
@@ -199,27 +189,27 @@ One min read
   
 
   <div class='container entry-content'>
-  <p>例如：假如每一个用户信息都是一个单独的csv文件，现在想将所有的用户信息合并成一个csv文件。
-尝试了很多种python的写法，效果都不是很理想，最后用cmd中的一行命令完美解决，效果相当于python中的<code>concat(axis=1)</code>（即纵向拼接）。</p>
+  <p>For example, if each user information is a separate csv file, now I want to merge all the user information into one csv file.
+I tried a lot of Python writing methods, the effect is not very ideal, and finally solved with a line of commands in cmd, the effect is equivalent to <code>concat (axis=1)</code> in python (ie vertical stitching).</p>
 
-<p><strong>步骤如下:</strong></p>
+<p><strong>Steps:</strong></p>
 
 <ul>
-<li><p>1.保证所有的csv文件在一个文件夹下。</p></li>
+<li><p>1.Make sure all csv files are in one folder.</p></li>
 
-<li><p>2.打开cmd，cd到存放csv的文件夹。（也可以在csv文件夹中，按住shift加鼠标右键，选择在此处打开命令窗口。）</p></li>
+<li><p>2.Open the cmd compiler and use &ldquo;cd&rdquo; to enter the folder where the csv is stored.（You can also hold down shift in the csv folder and click the right mouse button to open the command window here.）</p></li>
 
-<li><p>3.输入以下命令；</p></li>
+<li><p>3.Enter the following command；</p></li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">copy</span> <span style="color:#f92672">*</span>.<span style="color:#a6e22e">csv</span> <span style="color:#a6e22e">merge</span>.<span style="color:#a6e22e">csv</span>
 </code></pre></div>
-<p>（merge为合成后生成文件的名字，可以任意。）</p>
+<p>（‘merge’ is the name of the generated file, you can name it yourself.）</p>
 
 <ul>
-<li>4.然后按enter，终端对话框为显示进度。结束后，打开csv文件夹就可以看到merge.csv</li>
+<li>4.Then press <code>enter</code> and the terminal dialog box shows the progress. After the end, open the csv folder and you can see merge.csv</li>
 </ul>
 
-<p><strong>参考</strong>：<a href="https://www.solveyourtech.com/merge-csv-files/" target="_blank">Merge CSV Files Into One Large CSV File In Windows 7</a></p>
+<p><strong>Reference</strong>：<a href="https://www.solveyourtech.com/merge-csv-files/" target="_blank">Merge CSV Files Into One Large CSV File In Windows 7</a></p>
 
 <hr />
 
@@ -244,7 +234,7 @@ One min read
   
 </svg>
 </span>
-  <span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/python'>Python</a>, <a class='tag' href='/tags/cmd'>Cmd</a></div>
+  <span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/python'>Python</a></div>
 
   </div>
 </footer>
@@ -254,8 +244,8 @@ One min read
 
 <nav class='entry-nav'>
   <div class='container'><div class='next-entry sep-before'>
-      <a href='/docs/bookreview/bookreview/'>
-        <span class='screen-reader-text'>Next post: </span>Book Review: 关于《圣经》<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+      <a href='/docs/codenote/python/'>
+        <span class='screen-reader-text'>Next post: </span>Python:Some Common Bugs(1)<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
   
   <line x1="4" y1="12" x2="20" y2="12"/>
   <polyline points="14 6 20 12 14 18"/>
@@ -293,7 +283,7 @@ One min read
       </li></ul>
   </nav>
 </section><div class='copyright'>
-  <p> &copy; 2017-2018 Tiewei_Li </p>
+  <p> &copy; 2017-2019 Tiewei_Li </p>
 </div>
 
         </div>

@@ -11,22 +11,6 @@
     
     
     <item>
-      <title>About</title>
-      <link>https://tieweill.github.io/adout/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tieweill.github.io/adout/</guid>
-      <description>Who?  A first-year student of the school of journalism and communication, nanjing university.
- Research interests: Computational Communication
-  What?  Introductions to my research
- A display of things made with love
- Insight on things I will make
- A sort of my new konwledge.
- More will be added in the future
-  How? Click on the tabs on the top of the page to start browsing, and remember to send me an email at Litiewei219@163.</description>
-    </item>
-    
-    <item>
       <title>DOCS</title>
       <link>https://tieweill.github.io/docs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -42,6 +26,22 @@
       
       <guid>https://tieweill.github.io/projects/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://tieweill.github.io/adout/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tieweill.github.io/adout/</guid>
+      <description>Who?  A first-year student of the school of journalism and communication, nanjing university.
+ Research interests: Computational Communication
+  What?  Introductions to my research
+ A display of things made with love
+ Insight on things I will make
+ A sort of my new konwledge.
+ More will be added in the future
+  How? Click on the tabs on the top of the page to start browsing, and remember to send me an email at Litiewei219@163.</description>
     </item>
     
     <item>
@@ -66,18 +66,24 @@
     </item>
     
     <item>
-      <title>合并某文件夹下所有csv文件的方法</title>
+      <title>Python:Some Common Bugs(1)</title>
+      <link>https://tieweill.github.io/docs/codenote/python/</link>
+      <pubDate>Mon, 24 Dec 2018 19:21:56 +0800</pubDate>
+      
+      <guid>https://tieweill.github.io/docs/codenote/python/</guid>
+      <description>1.Pandas read csv: ParserError: Error tokenizing data. C error: Expected 1 fields in line 29, saw 2
+By default, CSV files are separated by commas. However, Commas are frequently used in Chinese, so it is easy to cause confusion when crawling over Chinese data. Therefore, when writing CSV files using pandas, we can set the parameter sep= &#39;\t&#39;, that is, write it with TAB as the separator.After all, TAB is rarely used in Chinese.</description>
+    </item>
+    
+    <item>
+      <title>How to merge all csv files in a folder?</title>
       <link>https://tieweill.github.io/docs/code-notes/</link>
       <pubDate>Wed, 12 Dec 2018 17:51:18 +0800</pubDate>
       
       <guid>https://tieweill.github.io/docs/code-notes/</guid>
-      <description>例如：假如每一个用户信息都是一个单独的csv文件，现在想将所有的用户信息合并成一个csv文件。 尝试了很多种python的写法，效果都不是很理想，最后用cmd中的一行命令完美解决，效果相当于python中的concat(axis=1)（即纵向拼接）。
-步骤如下:
- 1.保证所有的csv文件在一个文件夹下。
- 2.打开cmd，cd到存放csv的文件夹。（也可以在csv文件夹中，按住shift加鼠标右键，选择在此处打开命令窗口。）
- 3.输入以下命令；
-  copy *.csv merge.csv  （merge为合成后生成文件的名字，可以任意。）
- 4.然后按enter，终端对话框为显示进度。结束后，打开csv文件夹就可以看到merge.csv  参考：Merge CSV Files Into One Large CSV File In Windows 7</description>
+      <description>For example, if each user information is a separate csv file, now I want to merge all the user information into one csv file. I tried a lot of Python writing methods, the effect is not very ideal, and finally solved with a line of commands in cmd, the effect is equivalent to concat (axis=1) in python (ie vertical stitching).
+Steps:
+ 1.Make sure all csv files are in one folder.</description>
     </item>
     
   </channel>

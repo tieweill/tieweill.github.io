@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='1.Pandas read csv: ParserError: Error tokenizing data. C error: Expected 1 fields in line 29, saw 2
+By default, CSV files are separated by commas. However, Commas are frequently used in Chinese, so it is easy to cause confusion when crawling over Chinese data. Therefore, when writing CSV files using pandas, we can set the parameter sep= &#39;\t&#39;, that is, write it with TAB as the separator.After all, TAB is rarely used in Chinese.'>
+<meta name='theme-color' content='#ffcd00'>
+
+<meta property='og:title' content='Python:Some Common Bugs(1) • Tiewei Li'>
+<meta property='og:description' content='1.Pandas read csv: ParserError: Error tokenizing data. C error: Expected 1 fields in line 29, saw 2
+By default, CSV files are separated by commas. However, Commas are frequently used in Chinese, so it is easy to cause confusion when crawling over Chinese data. Therefore, when writing CSV files using pandas, we can set the parameter sep= &#39;\t&#39;, that is, write it with TAB as the separator.After all, TAB is rarely used in Chinese.'>
+<meta property='og:url' content='https://tieweill.github.io/docs/codenote/python/'>
+<meta property='og:site_name' content='Tiewei Li'>
+<meta property='og:type' content='article'><meta property='article:section' content='Docs'><meta property='article:tag' content='Python'><meta property='article:published_time' content='2018-12-24T19:21:56&#43;08:00'/><meta property='article:modified_time' content='2018-12-24T19:21:56&#43;08:00'/><meta name='twitter:card' content='summary'>
+
+<meta name="generator" content="Hugo 0.45" />
+
+  <title>Python:Some Common Bugs(1) • Tiewei Li</title>
+  <link rel='canonical' href='https://tieweill.github.io/docs/codenote/python/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'>
+<link rel='stylesheet' href='/assets/css/main.809149b6.css'><link rel='stylesheet' href='/css/custom.css'><style>
+:root{--color-accent:#ffcd00;}
+</style>
+
+  
+
+</head>
+
+
+<body class='page type-Docs has-sidebar'>
+
+  <div class='site'>
+
+    <div id='sidebar' class='sidebar'>
+  <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
+
+  <div class='container'><section class='widget widget-about sep-after'>
+  <header>
+    
+    <div class='logo'>
+      <a href='/'>
+        <img src='/images/logo.png'>
+      </a>
+    </div>
+    
+    <h2 class='title site-title '>
+    Tiewei Li
+    </h2>
+    <div class='desc'>
+    Nice To Meet You
+    </div>
+  </header>
+
+</section>
+<section class='widget widget-search sep-after'>
+  <header>
+    <h4 class='title widget-title'>Search</h4>
+  </header>
+
+  <form action='/search' id='search-form' class='search-form'>
+    <label>
+      <span class='screen-reader-text'>Search</span>
+      <input id='search-term' class='search-term' type='search' name='q' placeholder='Search&hellip;'>
+    </label></form>
+
+</section>
+<section class='widget widget-sidebar_menu sep-after'><nav id='sidebar-menu' class='menu sidebar-menu' aria-label='Sidebar Menu'>
+    <div class='container'>
+      <ul><li class='item'>
+  <a href='/'>Home</a></li></ul>
+    </div>
+  </nav>
+
+</section><section class='widget widget-taxonomy_cloud sep-after'>
+  <header>
+    <h4 class='title widget-title'>Tags</h4>
+  </header>
+
+  <div class='container list-container'>
+  <ul class='list taxonomy-cloud'><li>
+        <a href='/tags/bookreview' style='font-size:1em'>BookReview</a>
+      </li><li>
+        <a href='/tags/python' style='font-size:2em'>Python</a>
+      </li></ul>
+</div>
+
+
+</section>
+</div>
+
+  <div class='sidebar-overlay'></div>
+</div>
+
+    <div class='main'>
+
+      <nav id='main-menu' class='menu main-menu' aria-label='Main Menu'>
+  <div class='container'>
+    <a class='screen-reader-text' href='#content'>Skip to Content</a>
+
+<button id='sidebar-toggler' class='sidebar-toggler' aria-controls='sidebar'>
+  <span class='screen-reader-text'>Toggle Sidebar</span>
+  <span class='open'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="3" y1="12" x2="21" y2="12" />
+  <line x1="3" y1="6" x2="21" y2="6" />
+  <line x1="3" y1="18" x2="21" y2="18" />
+  
+</svg>
+</span>
+  <span class='close'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="18" y1="6" x2="6" y2="18" />
+  <line x1="6" y1="6" x2="18" y2="18" />
+  
+</svg>
+</span>
+</button>
+    <ul><li class='item'>
+        <a href='/'>Home</a>
+      </li><li class='item'>
+        <a href='/docs/'>DOCS</a>
+      </li><li class='item'>
+        <a href='/projects/'>PROJECTS</a>
+      </li><li class='item'>
+        <a href='/adout/'>About</a>
+      </li><li class='item'>
+        <a href='https://github.com/tieweill/tieweill.github.io'>Repo</a>
+      </li></ul>
+  </div>
+</nav>
+
+      <header id='header' class='header site-header'>
+        <div class='container sep-after'>
+          <div class='header-info'><p class='site-title title'>Tiewei Li</p><p class='desc site-desc'>Nice To Meet You</p>
+          </div>
+        </div>
+      </header>
+
+      <main id='content'>
+
+
+<article lang='en' class='entry'>
+  <header class='header entry-header'>
+  <div class='container sep-after'>
+    <div class='header-info'>
+      <h1 class='title'>Python:Some Common Bugs(1)</h1>
+      
+
+    </div>
+    
+<div class='entry-meta'>
+  <span class='posted-on'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+  <line x1="16" y1="2" x2="16" y2="6"/>
+  <line x1="8" y1="2" x2="8" y2="6"/>
+  <line x1="3" y1="10" x2="21" y2="10"/>
+  
+</svg>
+<span class='screen-reader-text'>Posted on </span>
+  <time class='entry-date' datetime='2018-12-24T19:21:56&#43;08:00'>2018, Dec 24</time>
+</span>
+
+  
+  
+<span class='reading-time'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <circle cx="12" cy="12" r="10"/>
+  <polyline points="12 6 12 12 15 15"/>
+  
+</svg>
+2 mins read
+</span>
+
+
+</div>
+
+
+  </div>
+</header>
+
+  
+  
+
+  <div class='container entry-content'>
+  <p><strong>1.Pandas read csv: ParserError: Error tokenizing data. C error: Expected 1 fields in line 29, saw 2</strong></p>
+
+<p>By default, CSV files are separated by commas. However, Commas are frequently used in Chinese, so it is easy to cause confusion when crawling over Chinese data. Therefore, when writing CSV files using pandas, we can set the parameter  <code>sep= '\t'</code>, that is, write it with TAB as the separator.After all, TAB is rarely used in Chinese.
+Then when you read the CSV file , you must add a parameter delimiter:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">df</span><span style="color:#f92672">=</span><span style="color:#a6e22e">pd</span>.<span style="color:#a6e22e">read_csv</span>(<span style="color:#e6db74">&#39;path&#39;</span>,<span style="color:#a6e22e">delimiter</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;\t&#34;</span>)
+</code></pre></div>
+<p>Otherwise, an error will be reported when reading CSV: <code>ParserError: Error tokenizing data. C error: Expected 1 fields in line 29, saw 2</code></p>
+
+<hr />
+
+<p><strong>2. TypeError: &lsquo;list&rsquo; object is not callable</strong></p>
+
+<p>What happens if the list variable and the list function have the same name?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">list</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;Bob&#39;</span>, <span style="color:#e6db74">&#39;Tom&#39;</span>, <span style="color:#e6db74">&#39;Lily&#39;</span>, <span style="color:#e6db74">&#39;Jack&#39;</span>]
+
+<span style="color:#a6e22e">tup_1</span> <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>)
+<span style="color:#a6e22e">tupToList</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">list</span>(<span style="color:#a6e22e">tup_1</span>)
+
+<span style="color:#a6e22e">print</span>(<span style="color:#a6e22e">tupToList</span>)
+</code></pre></div>
+<p>You&rsquo;ll get an error like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">Traceback</span> (<span style="color:#a6e22e">most</span> <span style="color:#a6e22e">recent</span> <span style="color:#a6e22e">call</span> <span style="color:#a6e22e">last</span>)<span style="color:#f92672">:</span>
+  <span style="color:#a6e22e">File</span> <span style="color:#e6db74">&#34;D:/python_workshop/python6/lesson3_list.py&#34;</span>, <span style="color:#a6e22e">line</span> <span style="color:#ae81ff">6</span>, <span style="color:#66d9ef">in</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">module</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#a6e22e">tupToList</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">list</span>(<span style="color:#a6e22e">tup_1</span>)
+<span style="color:#a6e22e">TypeError</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;list&#39;</span> <span style="color:#a6e22e">object</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">not</span> <span style="color:#a6e22e">callable</span>
+</code></pre></div>
+<p><code>Callable ()</code> is a built-in function in python to check whether an object is callable.
+ In the above code, since the variable list and the function list are renamed, the function finds that the list is a well-defined list when the list function is called,  so a type error is thrown.</p>
+
+<hr />
+
+<p><strong>3.UnicodeEncodeError: &lsquo;gbk&rsquo; codec can&rsquo;t encode character u&rsquo;\xa0&rsquo; in position 4813: illegal multibyte sequence</strong></p>
+
+<p>If you want to read a file in gbk format, sometimes the above error will be reported.</p>
+
+<pre><code>Here, we need to figure out the relationship between gb2312, gbk and gb18030
+GB2312: 6763 Chinese characters 
+GBK: 21003 Chinese characters
+GB18030-2000: 27533 Chinese characters
+GB18030-2005: 70244 Chinese characters
+Therefore, GBK is a superset of GB2312, and GB18030 is a superset of GBK.
+</code></pre>
+
+<p>You can try the following code to solve this bug:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">encoding</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;gb18030&#34;</span>
+</code></pre></div>
+<p><strong>If you want to convert utf8 format files to gbk format files, try the following code:</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">def</span> <span style="color:#a6e22e">ReadFile</span>(<span style="color:#a6e22e">filePath</span>,<span style="color:#a6e22e">encoding</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>)<span style="color:#f92672">:</span>
+    <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">codecs</span>.<span style="color:#a6e22e">open</span>(<span style="color:#a6e22e">filePath</span>,<span style="color:#e6db74">&#34;r&#34;</span>,<span style="color:#a6e22e">encoding</span>) <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">f</span><span style="color:#f92672">:</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">read</span>()
+
+<span style="color:#a6e22e">def</span> <span style="color:#a6e22e">WriteFile</span>(<span style="color:#a6e22e">filePath</span>,<span style="color:#a6e22e">u</span>,<span style="color:#a6e22e">encoding</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;gbk&#34;</span>)<span style="color:#f92672">:</span>
+    <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">codecs</span>.<span style="color:#a6e22e">open</span>(<span style="color:#a6e22e">filePath</span>,<span style="color:#e6db74">&#34;wb&#34;</span>) <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">f</span><span style="color:#f92672">:</span>
+        <span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">write</span>(<span style="color:#a6e22e">u</span>.<span style="color:#a6e22e">encode</span>(<span style="color:#a6e22e">encoding</span>,<span style="color:#a6e22e">errors</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ignore&#34;</span>))
+
+<span style="color:#a6e22e">def</span> <span style="color:#a6e22e">UTF8_2_GBK</span>(<span style="color:#a6e22e">src</span>,<span style="color:#a6e22e">dst</span>)<span style="color:#f92672">:</span>
+    <span style="color:#a6e22e">content</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ReadFile</span>(<span style="color:#a6e22e">src</span>,<span style="color:#a6e22e">encoding</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>)
+    <span style="color:#a6e22e">WriteFile</span>(<span style="color:#a6e22e">dst</span>,<span style="color:#a6e22e">content</span>,<span style="color:#a6e22e">encoding</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;gb18030&#34;</span>)
+</code></pre></div>
+</div>
+
+  
+<footer class='entry-footer'>
+  <div class='container sep-before'>
+  <div class='categories'>
+  <span class='taxonomy-icon'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M22,19a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V5A2,2,0,0,1,4,3H9l2,3h9a2,2,0,0,1,2,2Z"/>
+  
+</svg>
+</span>
+  <span class='screen-reader-text'>Categories: </span><a class='category' href='/categories/notes'>Notes</a></div>
+<div class='tags'>
+  <span class='taxonomy-icon'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
+  <line x1="7" y1="7" x2="7" y2="7"/>
+  
+</svg>
+</span>
+  <span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/python'>Python</a></div>
+
+  </div>
+</footer>
+
+
+</article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/docs/code-notes/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+  
+</svg>
+ Previous</span>
+        <span class='screen-reader-text'>Previous post: </span>How to merge all csv files in a folder?</a>
+    </div><div class='next-entry sep-before'>
+      <a href='/docs/bookreview/bookreview/'>
+        <span class='screen-reader-text'>Next post: </span>Book Review: 关于《圣经》<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="4" y1="12" x2="20" y2="12"/>
+  <polyline points="14 6 20 12 14 18"/>
+  
+</svg>
+</span>
+      </a>
+    </div></div>
+</nav>
+
+
+
+
+      </main>
+
+      <footer id='footer' class='footer'>
+        <div class='container sep-before'><section class='widget widget-social_menu sep-after'><nav aria-label='Social Menu'>
+    <ul><li>
+        <a href='https://github.com/https://github.com/tieweill' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Github account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='mailto:Litiewei219@163.com' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Contact via Email</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+  <polyline points="22,6 12,13 2,6"/>
+  
+</svg>
+</a>
+      </li></ul>
+  </nav>
+</section><div class='copyright'>
+  <p> &copy; 2017-2019 Tiewei_Li </p>
+</div>
+
+        </div>
+      </footer>
+
+    </div>
+  </div><script>window.__public_path__='\/assets\/js\/'</script>
+
+<script src='/assets/js/main.68cb493a.js'></script><script src='/js/custom.js'></script>
+
+
+
+</body>
+
+</html>
+
