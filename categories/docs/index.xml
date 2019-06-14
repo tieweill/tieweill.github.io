@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Python on Tiewei Li</title>
-    <link>https://tieweill.github.io/tags/python/</link>
-    <description>Recent content in Python on Tiewei Li</description>
+    <title>Docs on Tiewei Li</title>
+    <link>https://tieweill.github.io/categories/docs/</link>
+    <description>Recent content in Docs on Tiewei Li</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Fri, 14 Jun 2019 21:13:15 +0800</lastBuildDate>
     
-	<atom:link href="https://tieweill.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://tieweill.github.io/categories/docs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -26,27 +26,6 @@
       
       <guid>https://tieweill.github.io/sentiment_tecent/</guid>
       <description>Sentiment Analysis:  The process of computationally identifying and categorizing opinions expressed in a piece of text, especially in order to determine whether the writer’s sentiment and attitude towards a particular topic, product, etc. is positive, negative, or neutral.Sentiment analysis is widely applied to voice of the customer materials such as reviews and survey responses, online and social media, and healthcare materials for applications that range from marketing to customer service to clinical medicine.</description>
-    </item>
-    
-    <item>
-      <title>Python:Some Common Bugs(1)</title>
-      <link>https://tieweill.github.io/docs/codenote/python/</link>
-      <pubDate>Mon, 24 Dec 2018 19:21:56 +0800</pubDate>
-      
-      <guid>https://tieweill.github.io/docs/codenote/python/</guid>
-      <description>1.Pandas read csv: ParserError: Error tokenizing data. C error: Expected 1 fields in line 29, saw 2
-By default, CSV files are separated by commas. However, Commas are frequently used in Chinese, so it is easy to cause confusion when crawling over Chinese data. Therefore, when writing CSV files using pandas, we can set the parameter sep= &#39;\t&#39;, that is, write it with TAB as the separator.After all, TAB is rarely used in Chinese.</description>
-    </item>
-    
-    <item>
-      <title>How to merge all csv files in a folder?</title>
-      <link>https://tieweill.github.io/docs/code-notes/</link>
-      <pubDate>Wed, 12 Dec 2018 17:51:18 +0800</pubDate>
-      
-      <guid>https://tieweill.github.io/docs/code-notes/</guid>
-      <description>For example, if each user information is a separate csv file, now I want to merge all the user information into one csv file. I tried a lot of Python writing methods, the effect is not very ideal, and finally solved with a line of commands in cmd, the effect is equivalent to concat (axis=1) in python (ie vertical stitching).
-Steps:
- 1.Make sure all csv files are in one folder.</description>
     </item>
     
   </channel>

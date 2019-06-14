@@ -5,7 +5,7 @@
     <link>https://tieweill.github.io/</link>
     <description>Recent content in Home on Tiewei Li</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 26 Dec 2018 15:05:54 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 14 Jun 2019 21:13:15 +0800</lastBuildDate>
     
 	<atom:link href="https://tieweill.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -41,6 +41,24 @@ Xianlin Road No.163, Qixia District, Nanjing, Jiangsu Province
  B.A.in Chinese Language and Literature  Cumulative GPA:4.2 / 5.0    RESEARCH INTERESTS   Computational Social Science
  Science communication
    PUBLICATIONS TEACHING EXPERIENCE  Nanjing University</description>
+    </item>
+    
+    <item>
+      <title>TecentNLP for sentiment analysis</title>
+      <link>https://tieweill.github.io/docs/sentiment_tecent/</link>
+      <pubDate>Fri, 14 Jun 2019 21:13:15 +0800</pubDate>
+      
+      <guid>https://tieweill.github.io/docs/sentiment_tecent/</guid>
+      <description>Sentiment Analysis:  The process of computationally identifying and categorizing opinions expressed in a piece of text, especially in order to determine whether the writer’s sentiment and attitude towards a particular topic, product, etc. is positive, negative, or neutral.Sentiment analysis is widely applied to voice of the customer materials such as reviews and survey responses, online and social media, and healthcare materials for applications that range from marketing to customer service to clinical medicine.</description>
+    </item>
+    
+    <item>
+      <title>TecentNLP for sentiment analysis</title>
+      <link>https://tieweill.github.io/sentiment_tecent/</link>
+      <pubDate>Fri, 14 Jun 2019 21:13:15 +0800</pubDate>
+      
+      <guid>https://tieweill.github.io/sentiment_tecent/</guid>
+      <description>Sentiment Analysis:  The process of computationally identifying and categorizing opinions expressed in a piece of text, especially in order to determine whether the writer’s sentiment and attitude towards a particular topic, product, etc. is positive, negative, or neutral.Sentiment analysis is widely applied to voice of the customer materials such as reviews and survey responses, online and social media, and healthcare materials for applications that range from marketing to customer service to clinical medicine.</description>
     </item>
     
     <item>

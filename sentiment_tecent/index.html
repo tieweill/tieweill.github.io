@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='Sentiment Analysis:  The process of computationally identifying and categorizing opinions expressed in a piece of text, especially in order to determine whether the writer’s sentiment and attitude towards a particular topic, product, etc. is positive, negative, or neutral.Sentiment analysis is widely applied to voice of the customer materials such as reviews and survey responses, online and social media, and healthcare materials for applications that range from marketing to customer service to clinical medicine.'>
+<meta name='theme-color' content='#ffcd00'>
+
+<meta property='og:title' content='TecentNLP for sentiment analysis • Tiewei Li'>
+<meta property='og:description' content='Sentiment Analysis:  The process of computationally identifying and categorizing opinions expressed in a piece of text, especially in order to determine whether the writer’s sentiment and attitude towards a particular topic, product, etc. is positive, negative, or neutral.Sentiment analysis is widely applied to voice of the customer materials such as reviews and survey responses, online and social media, and healthcare materials for applications that range from marketing to customer service to clinical medicine.'>
+<meta property='og:url' content='https://tieweill.github.io/sentiment_tecent/'>
+<meta property='og:site_name' content='Tiewei Li'>
+<meta property='og:type' content='article'><meta property='article:section' content=''><meta property='article:tag' content='Python'><meta property='article:published_time' content='2019-06-14T21:13:15&#43;08:00'/><meta property='article:modified_time' content='2019-06-14T21:13:15&#43;08:00'/><meta name='twitter:card' content='summary'>
+
+<meta name="generator" content="Hugo 0.45" />
+
+  <title>TecentNLP for sentiment analysis • Tiewei Li</title>
+  <link rel='canonical' href='https://tieweill.github.io/sentiment_tecent/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'>
+<link rel='stylesheet' href='/assets/css/main.809149b6.css'><link rel='stylesheet' href='/css/custom.css'><style>
+:root{--color-accent:#ffcd00;}
+</style>
+
+  
+
+</head>
+
+
+<body class='page type-page has-sidebar'>
+
+  <div class='site'>
+
+    <div id='sidebar' class='sidebar'>
+  <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
+
+  <div class='container'><section class='widget widget-about sep-after'>
+  <header>
+    
+    <div class='logo'>
+      <a href='/'>
+        <img src='/images/logo.png'>
+      </a>
+    </div>
+    
+    <h2 class='title site-title '>
+    Tiewei Li
+    </h2>
+    <div class='desc'>
+    Nice To Meet You
+    </div>
+  </header>
+
+</section>
+<section class='widget widget-search sep-after'>
+  <header>
+    <h4 class='title widget-title'>Search</h4>
+  </header>
+
+  <form action='/search' id='search-form' class='search-form'>
+    <label>
+      <span class='screen-reader-text'>Search</span>
+      <input id='search-term' class='search-term' type='search' name='q' placeholder='Search&hellip;'>
+    </label></form>
+
+</section>
+<section class='widget widget-sidebar_menu sep-after'><nav id='sidebar-menu' class='menu sidebar-menu' aria-label='Sidebar Menu'>
+    <div class='container'>
+      <ul><li class='item'>
+  <a href='/'>Home</a></li></ul>
+    </div>
+  </nav>
+
+</section><section class='widget widget-taxonomy_cloud sep-after'>
+  <header>
+    <h4 class='title widget-title'>Tags</h4>
+  </header>
+
+  <div class='container list-container'>
+  <ul class='list taxonomy-cloud'><li>
+        <a href='/tags/bookreview' style='font-size:1em'>BookReview</a>
+      </li><li>
+        <a href='/tags/python' style='font-size:2em'>Python</a>
+      </li></ul>
+</div>
+
+
+</section>
+</div>
+
+  <div class='sidebar-overlay'></div>
+</div>
+
+    <div class='main'>
+
+      <nav id='main-menu' class='menu main-menu' aria-label='Main Menu'>
+  <div class='container'>
+    <a class='screen-reader-text' href='#content'>Skip to Content</a>
+
+<button id='sidebar-toggler' class='sidebar-toggler' aria-controls='sidebar'>
+  <span class='screen-reader-text'>Toggle Sidebar</span>
+  <span class='open'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="3" y1="12" x2="21" y2="12" />
+  <line x1="3" y1="6" x2="21" y2="6" />
+  <line x1="3" y1="18" x2="21" y2="18" />
+  
+</svg>
+</span>
+  <span class='close'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="18" y1="6" x2="6" y2="18" />
+  <line x1="6" y1="6" x2="18" y2="18" />
+  
+</svg>
+</span>
+</button>
+    <ul><li class='item'>
+        <a href='/'>Home</a>
+      </li><li class='item'>
+        <a href='/docs/'>DOCS</a>
+      </li><li class='item'>
+        <a href='/projects/'>PROJECTS</a>
+      </li><li class='item'>
+        <a href='/adout/'>CV</a>
+      </li><li class='item'>
+        <a href='https://github.com/tieweill/tieweill.github.io'>Repo</a>
+      </li></ul>
+  </div>
+</nav>
+
+      <header id='header' class='header site-header'>
+        <div class='container sep-after'>
+          <div class='header-info'><p class='site-title title'>Tiewei Li</p><p class='desc site-desc'>Nice To Meet You</p>
+          </div>
+        </div>
+      </header>
+
+      <main id='content'>
+
+
+<article lang='en' class='entry'>
+  <header class='header entry-header'>
+  <div class='container sep-after'>
+    <div class='header-info'>
+      <h1 class='title'>TecentNLP for sentiment analysis</h1>
+      
+
+    </div>
+    
+<div class='entry-meta'>
+  <span class='posted-on'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+  <line x1="16" y1="2" x2="16" y2="6"/>
+  <line x1="8" y1="2" x2="8" y2="6"/>
+  <line x1="3" y1="10" x2="21" y2="10"/>
+  
+</svg>
+<span class='screen-reader-text'>Posted on </span>
+  <time class='entry-date' datetime='2019-06-14T21:13:15&#43;08:00'>2019, Jun 14</time>
+</span>
+
+  
+  
+<span class='reading-time'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <circle cx="12" cy="12" r="10"/>
+  <polyline points="12 6 12 12 15 15"/>
+  
+</svg>
+2 mins read
+</span>
+
+
+</div>
+
+
+  </div>
+</header>
+
+  
+  
+
+  <div class='container entry-content'>
+  
+
+<h2 id="sentiment-analysis">Sentiment Analysis:</h2>
+
+<blockquote>
+<p>The process of computationally identifying and categorizing opinions expressed in a piece of text, especially in order to determine whether the writer’s sentiment and attitude towards a particular topic, product, etc. is positive, negative, or neutral.Sentiment analysis is widely applied to voice of the customer materials such as reviews and survey responses, online and social media, and healthcare materials for applications that range from marketing to customer service to clinical medicine.
+A basic task in sentiment analysis is classifying the polarity of a given text at the document, sentence, or feature/aspect level—whether the expressed opinion in a document, a sentence or an entity feature/aspect is positive, negative, or neutral. Advanced, “beyond polarity” sentiment classification looks, for instance, at emotional states such as “angry”, “sad”, and “happy“.</p>
+</blockquote>
+
+<p>Sentiment analysis is often employed by researchers for text mining.It&rsquo;s getting more and more accurate today. But details such as irony, humor or sarcasm are barely discernible with a simple sentiment analysis.
+However,There are some studies that have yielded very interesting findings using simple sentiment analysis.</p>
+
+<p>For example,<a href="https://www.nature.com/articles/s41562-018-0521-2" target="_blank">Siqi Zheng(2019)</a>and his colleague claim that high levels of air pollution in China may contribute to the urban population’s reported low level of happiness.
+The important thing is,how they measure &ldquo;happiness&rdquo;? Actually, they did it with a very simple way - use the tweets with geo tags to construct their city/day happiness index.</p>
+
+<ul>
+<li>use the <a href="https://nlp.qq.com/help.cgi?topic=api#sentiment" target="_blank">‘Tencent’</a> natural language processing (NLP) platform to do sentiment analysis.</li>
+<li><a href="another NLP platform" target="_blank">‘Boson’</a> for a robustness check.</li>
+</ul>
+
+<p>See? They didn&rsquo;t even do manual tagging!</p>
+
+<p>I am currently working on a research on the GM discussion on a Knowledge Q&amp;A website.I used the emotional dictionary method to analyze the sentiment in the texts and want to use the Tencent NLP platform for robustness testing.
+But the official website only provides PHP code examples. So I wrote an example of using Python to call this api, and put this demo here, hoping to help those who want to use this platform to do research but are not familiar with programming.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">Python</span> <span style="color:#ae81ff">3.6</span>
+<span style="color:#a6e22e">from</span> <span style="color:#a6e22e">QcloudApi</span>.<span style="color:#a6e22e">qcloudapi</span> <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">QcloudApi</span>
+
+<span style="color:#a6e22e">module</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;wenzhi&#39;</span>
+<span style="color:#a6e22e">action</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;TextSentiment&#39;</span>
+<span style="color:#a6e22e">config</span> <span style="color:#f92672">=</span> {
+    <span style="color:#e6db74">&#39;method&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;GET&#39;</span>,
+    <span style="color:#e6db74">&#39;Region&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;ap-guangzhou&#39;</span>,
+    <span style="color:#e6db74">&#39;secretId&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Your secretId&#39;</span>,
+    <span style="color:#e6db74">&#39;secretKey&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Your secretKey&#39;</span>,
+   }
+   
+<span style="color:#a6e22e">service</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">QcloudApi</span>(<span style="color:#a6e22e">module</span>, <span style="color:#a6e22e">config</span>)
+<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">service</span>.<span style="color:#a6e22e">setRegion</span>(<span style="color:#e6db74">&#39;ap-shanghai&#39;</span>)
+
+<span style="color:#a6e22e">def</span> <span style="color:#a6e22e">get_sentiments</span>(<span style="color:#a6e22e">text</span>)<span style="color:#f92672">:</span>
+    <span style="color:#66d9ef">try</span><span style="color:#f92672">:</span>
+        <span style="color:#a6e22e">params</span> <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;content&#39;</span><span style="color:#f92672">:</span><span style="color:#a6e22e">text</span>,<span style="color:#e6db74">&#39;type&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">4</span>}
+        <span style="color:#a6e22e">s</span><span style="color:#f92672">=</span><span style="color:#a6e22e">service</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">action</span>,<span style="color:#a6e22e">params</span>).<span style="color:#a6e22e">decode</span>() 
+        <span style="color:#a6e22e">s</span><span style="color:#f92672">=</span> eval(<span style="color:#a6e22e">s</span>)     
+        <span style="color:#a6e22e">positive</span><span style="color:#f92672">=</span><span style="color:#a6e22e">s</span>[<span style="color:#e6db74">&#39;positive&#39;</span>]<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">positive</span> <span style="color:#a6e22e">possiblity</span>  
+        <span style="color:#a6e22e">negative</span><span style="color:#f92672">=</span><span style="color:#a6e22e">s</span>[<span style="color:#e6db74">&#39;negative&#39;</span>] <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">negative</span> <span style="color:#a6e22e">possiblity</span> 
+        <span style="color:#a6e22e">output</span> <span style="color:#f92672">=</span> [<span style="color:#a6e22e">positive</span>,<span style="color:#a6e22e">negative</span>]
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">output</span>
+    <span style="color:#a6e22e">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">e</span><span style="color:#f92672">:</span>
+        <span style="color:#a6e22e">print</span> (<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#a6e22e">str</span>(<span style="color:#a6e22e">e</span>))
+        <span style="color:#66d9ef">return</span> [<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>]
+</code></pre></div>
+<p>Very simple, right?</p>
+
+</div>
+
+  
+<footer class='entry-footer'>
+  <div class='container sep-before'>
+  <div class='categories'>
+  <span class='taxonomy-icon'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M22,19a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V5A2,2,0,0,1,4,3H9l2,3h9a2,2,0,0,1,2,2Z"/>
+  
+</svg>
+</span>
+  <span class='screen-reader-text'>Categories: </span><a class='category' href='/categories/docs'>Docs</a></div>
+<div class='tags'>
+  <span class='taxonomy-icon'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
+  <line x1="7" y1="7" x2="7" y2="7"/>
+  
+</svg>
+</span>
+  <span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/python'>Python</a></div>
+
+  </div>
+</footer>
+
+
+</article>
+
+<nav class='entry-nav'>
+  <div class='container'></div>
+</nav>
+
+
+
+
+      </main>
+
+      <footer id='footer' class='footer'>
+        <div class='container sep-before'><section class='widget widget-social_menu sep-after'><nav aria-label='Social Menu'>
+    <ul><li>
+        <a href='https://github.com/https://github.com/tieweill' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Github account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='mailto:Litiewei219@163.com' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Contact via Email</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+  <polyline points="22,6 12,13 2,6"/>
+  
+</svg>
+</a>
+      </li></ul>
+  </nav>
+</section><div class='copyright'>
+  <p> &copy; 2017-2019 Tiewei_Li </p>
+</div>
+
+        </div>
+      </footer>
+
+    </div>
+  </div><script>window.__public_path__='\/assets\/js\/'</script>
+
+<script src='/assets/js/main.68cb493a.js'></script><script src='/js/custom.js'></script>
+
+
+
+</body>
+
+</html>
+
